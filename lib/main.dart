@@ -11,12 +11,13 @@ class CellBuilder extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         home: Scaffold(
             body: SafeArea(
-          child: SfCalendar(
-            view: CalendarView.month,
-            monthCellBuilder: monthCellBuilder,
-            dataSource: _getCalendarDataSource(),
-          ),
-        )));
+              child: SfCalendar(
+                view: CalendarView.month,
+                monthCellBuilder: monthCellBuilder,
+                monthViewSettings: MonthViewSettings(appointmentDisplayMode: MonthAppointmentDisplayMode.none),
+                dataSource: _getCalendarDataSource(),
+              ),
+            )));
   }
 
   Widget monthCellBuilder(BuildContext context, MonthCellDetails details) {
