@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:syncfusion_flutter_calendar/calendar.dart';
 
-void main() => runApp(CellBuilder());
+void main() => runApp(const CellBuilder());
 
 class CellBuilder extends StatelessWidget {
+  const CellBuilder({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -14,7 +15,7 @@ class CellBuilder extends StatelessWidget {
               child: SfCalendar(
                 view: CalendarView.month,
                 monthCellBuilder: monthCellBuilder,
-                monthViewSettings: MonthViewSettings(appointmentDisplayMode: MonthAppointmentDisplayMode.none),
+                monthViewSettings: const MonthViewSettings(appointmentDisplayMode: MonthAppointmentDisplayMode.none),
                 dataSource: _getCalendarDataSource(),
               ),
             )));
@@ -33,14 +34,14 @@ class CellBuilder extends StatelessWidget {
                   details.date.day.toString(),
                   textAlign: TextAlign.center,
                 ),
-                Divider(color: Colors.transparent,),
+                const Divider(color: Colors.transparent,),
                 Text(
                   '$length',
                   textAlign: TextAlign.center,
-                  style: TextStyle(color: Colors.deepPurple),
+                  style: const TextStyle(color: Colors.deepPurple),
                 ),
-                Divider(color: Colors.transparent,),
-                Icon(
+                const Divider(color: Colors.transparent,),
+                const Icon(
                   Icons.event_available_rounded,
                   color: Colors.red,
                   size: 20,
@@ -51,11 +52,9 @@ class CellBuilder extends StatelessWidget {
         ),
       );
     }
-    return Container(
-      child: Text(
-        details.date.day.toString(),
-        textAlign: TextAlign.center,
-      ),
+    return Text(
+      details.date.day.toString(),
+      textAlign: TextAlign.center,
     );
   }
 
@@ -63,61 +62,61 @@ class CellBuilder extends StatelessWidget {
     List<Appointment> appointments = <Appointment>[];
     appointments.add(Appointment(
       startTime: DateTime.now(),
-      endTime: DateTime.now().add(Duration(hours: 1)),
+      endTime: DateTime.now().add(const Duration(hours: 1)),
       subject: 'Meeting',
       color: Colors.blue,
     ));
     appointments.add(Appointment(
       startTime: DateTime.now(),
-      endTime: DateTime.now().add(Duration(hours: 1)),
+      endTime: DateTime.now().add(const Duration(hours: 1)),
       subject: 'Restrospective',
       color: Colors.blue,
     ));
     appointments.add(Appointment(
       startTime: DateTime.now(),
-      endTime: DateTime.now().add(Duration(hours: 1)),
+      endTime: DateTime.now().add(const Duration(hours: 1)),
       subject: 'Planning',
       color: Colors.blue,
     ));
     appointments.add(Appointment(
-      startTime: DateTime.now().add(Duration(days: -5)),
-      endTime: DateTime.now().add(Duration(days: -5)),
+      startTime: DateTime.now().add(const Duration(days: -5)),
+      endTime: DateTime.now().add(const Duration(days: -5)),
       subject: 'Planning',
       color: Colors.deepOrangeAccent,
     ));
     appointments.add(Appointment(
-      startTime: DateTime.now().add(Duration(days: -9)),
-      endTime: DateTime.now().add(Duration(days: -9)),
+      startTime: DateTime.now().add(const Duration(days: -9)),
+      endTime: DateTime.now().add(const Duration(days: -9)),
       subject: 'Consulting',
       color: Colors.pink,
     ));
     appointments.add(Appointment(
-      startTime: DateTime.now().add(Duration(days: -9, hours: 1)),
-      endTime: DateTime.now().add(Duration(days: -9, hours: 1)),
+      startTime: DateTime.now().add(const Duration(days: -9, hours: 1)),
+      endTime: DateTime.now().add(const Duration(days: -9, hours: 1)),
       subject: 'Holiday support',
       color: Colors.pink,
     ));
     appointments.add(Appointment(
-      startTime: DateTime.now().add(Duration(days: -15)),
-      endTime: DateTime.now().add(Duration(days: -15)),
+      startTime: DateTime.now().add(const Duration(days: -15)),
+      endTime: DateTime.now().add(const Duration(days: -15)),
       subject: 'Retrospective',
       color: Colors.purpleAccent,
     ));
     appointments.add(Appointment(
-      startTime: DateTime.now().add(Duration(days: 5)),
-      endTime: DateTime.now().add(Duration(days: 5)),
+      startTime: DateTime.now().add(const Duration(days: 5)),
+      endTime: DateTime.now().add(const Duration(days: 5)),
       subject: 'Sprint Plan',
       color: Colors.lightGreenAccent,
     ));
     appointments.add(Appointment(
-      startTime: DateTime.now().add(Duration(days: 9)),
-      endTime: DateTime.now().add(Duration(days: 9)),
+      startTime: DateTime.now().add(const Duration(days: 9)),
+      endTime: DateTime.now().add(const Duration(days: 9)),
       subject: 'Weekly Report',
       color: Colors.lime,
     ));
     appointments.add(Appointment(
-      startTime: DateTime.now().add(Duration(days: 3)),
-      endTime: DateTime.now().add(Duration(days: 3)),
+      startTime: DateTime.now().add(const Duration(days: 3)),
+      endTime: DateTime.now().add(const Duration(days: 3)),
       subject: 'Meeting',
       color: Colors.cyan,
     ));
