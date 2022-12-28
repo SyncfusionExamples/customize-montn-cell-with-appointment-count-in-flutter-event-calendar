@@ -1,4 +1,4 @@
-package com.example.timeruler_calendar
+package com.example.monthcellbuilder
 
 import io.flutter.embedding.android.FlutterActivity
 
